@@ -9,10 +9,11 @@ const App = () => {
     const [input, setInput] = useState('');
     const [code, setCode] = useState('');
 
+    // get esbuild.wasm from unpkg.com everytime the app start running
     const startService = async () => {
         ref.current = await esbuild.startService({
             worker: true,
-            wasmURL: '/esbuild.wasm'
+            wasmURL: 'https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm'
         });
     };
 
