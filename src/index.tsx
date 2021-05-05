@@ -1,8 +1,10 @@
+import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import * as esbuild from 'esbuild-wasm';
 import { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 import { unpkgFetchPlugin } from './plugins/unpkg-fetch-plugin';
+import CodeEditor from './components/code-editor';
 
 const App = () => {
     const ref = useRef<any>();
@@ -67,6 +69,10 @@ const App = () => {
 
     return (
         <div>
+            <CodeEditor
+                initialValue="const a = 1;"
+                onChange={setInput}
+            />
             <textarea onChange={e => setInput(e.target.value)} value={input}></textarea>
             <div>
                 <button onClick={onClick}>Submit</button>
