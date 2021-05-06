@@ -1,3 +1,4 @@
+import './preview.css';
 import { useRef, useEffect } from 'react';
 
 interface PreviewProps {
@@ -30,10 +31,22 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
     // reset the content of the iframe everytime submit button is clicked
     useEffect(() => {
         iframe.current.srcdoc = html;
-        iframe.current.contentWindow.postMessage(code, '*');
+
+        // give the browser enought time to reset the iframe
+        setTimeout(() => {
+            iframe.current.contentWindow.postMessage(code, '*');
+        }, 50);
     }, [code]);
 
-    return <iframe ref={iframe} title="preview" sandbox="allow-scripts" srcDoc={html} />
+    return (
+        <div className="preview-wrapper">
+            <iframe
+                ref={iframe}
+                title="preview" sandbox="allow-scripts"
+                srcDoc={html}
+            />
+        </div>
+    );
 };
 
 export default Preview;
