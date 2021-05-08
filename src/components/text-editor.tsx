@@ -34,7 +34,6 @@ const TextEditor: React.FC = () => {
             <div className="card-content">
                 <MDEditor.Markdown source={value} />
             </div>
-
         </div>
     );
 };
