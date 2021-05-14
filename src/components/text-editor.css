@@ -15,6 +15,7 @@
 
 .text-editor .w-md-editor-bar {
     position: relative;
+    margin-top: -10px;
     height: 10px;
     width: 100%;
     cursor: row-resize;
