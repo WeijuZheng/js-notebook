@@ -22,7 +22,11 @@ const bundle = async (rawCode: string) => {
             define: {
                 'process.env.NODE_ENV': '"production"',
                 global: 'window'
-            }
+            },
+            // tell esBuild to use _React instead React
+            // because we want to avoid naming collision when user also import React
+            jsxFactory: '_React.createElement',
+            jsxFragment: '_React.Fragment'
         });
         return {
             code: result.outputFiles[0].text,
