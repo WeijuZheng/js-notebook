@@ -1,0 +1,9 @@
+[submodule "packages/cli"]
+	path = packages/cli
+	url = https://github.com/WeijuZheng/jbook-cli
+[submodule "packages/local-api"]
+	path = packages/local-api
+	url = https://github.com/WeijuZheng/jbook-local-api
+[submodule "packages/local-client"]
+	path = packages/local-client
+	url = https://github.com/WeijuZheng/jbook-local-client
