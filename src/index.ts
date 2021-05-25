@@ -6,6 +6,8 @@ import { createCellsRouter } from './routes/cells';
 export const serve = (port: number, filename: string, dir: string, useProxy: boolean) => {
     const app = express();
 
+    app.use(createCellsRouter(filename, dir));
+
     // useProxy is true if it's on the development mode
     if (useProxy) {
         // use proxy to local Create React App server
@@ -19,8 +21,6 @@ export const serve = (port: number, filename: string, dir: string, useProxy: boo
         const packagePath = require.resolve('local-client/build/index.html');
         app.use(express.static(path.dirname(packagePath)));
     }
-
-    app.use(createCellsRouter(filename, dir));
 
     // return a promiss so that the cli can await this function
     // to see if there is an error
