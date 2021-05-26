@@ -1,5 +1,5 @@
 {
-  "name": "js-notebook",
+  "name": "js-book",
   "version": "1.0.0",
   "description": "",
   "bin": "dist/index.js",
