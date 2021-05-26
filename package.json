@@ -1,5 +1,5 @@
 {
-  "name": "jsbook-cli",
+  "name": "js-code-book",
   "version": "1.0.0",
   "description": "",
   "bin": "dist/index.js",
